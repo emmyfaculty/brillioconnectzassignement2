@@ -1,0 +1,37 @@
+Both versions of the code provide a solution to the problem of serving pancakes to users within a given time slot.
+
+/**Non-Concurrent Version:**/
+Pros:
+Simpler implementation without explicit thread management.
+Straightforward sequential execution.
+Easier to understand and debug.
+
+Cons:
+Operates sequentially, potentially resulting in slower execution times for larger scenarios.
+Limited concurrency and parallelism.
+
+/**Concurrent Version (Using CompletableFuture):**/
+Pros:
+Achieves concurrency without using explicit threads or ExecutorServices.
+Leverages CompletableFuture to handle asynchronous tasks and parallel execution.
+Better performance in scenarios with a larger number of users or longer pancake making and consumption times.
+Simplified programming model for handling asynchronous tasks.
+
+Cons:
+Slightly more complex implementation compared to the non-concurrent version.
+Internal usage of a thread pool (ForkJoinPool) may have implications on resource usage and scalability in certain scenarios.
+
+/**Observations:**/
+
+The non-concurrent version is simpler and easier to understand, making it suitable for smaller and less complex scenarios.
+The concurrent version provides better performance and scalability by leveraging CompletableFuture and achieving concurrency.
+It is more suitable for larger scenarios with a significant number of users or longer time slots.
+The concurrent version introduces additional complexity due to the use of CompletableFuture and synchronization.
+However, it provides a higher-level abstraction for handling concurrency and asynchronous tasks, reducing the manual management of threads.
+Both versions adhere to the given requirements and provide the desired output.
+The choice between the non-concurrent and concurrent versions depends on the specific requirements, scalability needs, and complexity of the application.
+For smaller scenarios, the non-concurrent version may suffice, while the concurrent version is more suitable for larger and more demanding scenarios.
+
+
+
+
